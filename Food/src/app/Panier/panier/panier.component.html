@@ -22,15 +22,16 @@
 
         <td>
           {{c.quantite}}
-          <input type="text"[(ngModel)]="quantite" [disabled]="edit"   class="form-control"></td>
+          <input type="text"   class="form-control"></td>
         <td>{{c.prix}} dt</td>
         <td><i class="fas fa-trash" [ngStyle]="{'color' :'red'}">
-          </i> <i (click)="EnbleEdit()" class="fa fa-edit" [ngStyle]="{'color' :'blue'}">
+          </i> <i (click)="EnbleEdit(c)" class="fa fa-edit" [ngStyle]="{'color' :'blue'}">
           </i> </td>
       </tr>
 
     </tbody>
     
   </table>
-<app-amount [quantite]="quantite"></app-amount>
+<app-amount [quantite]="CommandeEdit"></app-amount>
+
 </div>

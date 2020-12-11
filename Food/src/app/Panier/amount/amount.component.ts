@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommandeProduit } from 'src/app/modele/CommandeProduit';
 
 @Component({
@@ -7,19 +7,23 @@ import { CommandeProduit } from 'src/app/modele/CommandeProduit';
   styleUrls: ['./amount.component.css']
 })
 export class AmountComponent implements OnInit {
-  total=0;
-  @Input() quantite;
+  total = 0;
+  @Input() quantite: CommandeProduit;
+
   Commande: CommandeProduit[] = [];
   constructor() { }
 
   ngOnInit(): void {
+
     JSON.parse(localStorage['Panier']).forEach(element => {
-     
+
       this.Commande.push(element);
     });
-this.Commande.forEach(c=>{
-  this.total=this.total+c.prix;
-})  
+    this.Commande.forEach(c => {
+      this.total = this.total + c.prix;
+    })
   }
+
+
 
 }

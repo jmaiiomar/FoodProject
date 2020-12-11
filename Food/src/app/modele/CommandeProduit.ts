@@ -7,4 +7,5 @@ export class CommandeProduit{
     produit:Product;
     quantite:number;
     user:User;
+    prix:number;
 }

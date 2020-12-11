@@ -32,7 +32,7 @@
 
       <form class="d-flex justify-content-left" [formGroup]="myform" (ngSubmit)="command(product)">
         <!-- Default input -->
-        <input type="number"  aria-label="Search" class="form-control" style="width: 100px" formControlName="quantite" >
+        <input type="number" required aria-label="Search" class="form-control" style="width: 100px" formControlName="quantite" >
         <button class="btn btn-primary btn-md my-0 p" type="submit" [disabled]='ProduitExistePanier(product)' >Add to Panier
           <i class="fas fa-shopping-cart ml-1"></i>
         </button>

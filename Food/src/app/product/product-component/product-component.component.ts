@@ -87,6 +87,7 @@ export class ProductComponentComponent implements OnInit {
     let data = this.myform.value.quantite;
     let panier = new CommandeProduit();
     panier.produit = product;
+    panier.prix=product.prix*data;
     panier.quantite = data;
     //console.log(panier)
     if(localStorage.getItem('Panier')!=null)

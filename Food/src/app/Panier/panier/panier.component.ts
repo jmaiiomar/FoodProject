@@ -10,14 +10,15 @@ export class PanierComponent implements OnInit {
   Commande: CommandeProduit[] = [];
 
   constructor() { }
-
+total=0;
   ngOnInit(): void {
     JSON.parse(localStorage['Panier']).forEach(element => {
 
       this.Commande.push(element);
     });
-    console.log(this.Commande)
-  
+this.Commande.forEach(c=>{
+  this.total=this.total+c.prix;
+})  
   }
 
 }

@@ -1,30 +1,35 @@
-
 <div class="container">
   <i class="fas fa-cart-arrow-down" [ngStyle]="{'color' :'white'}">
-  </i> 
-<table class="table">
+  </i>
+  <table class="table">
     <thead class="table-warning">
-    <tr>
+      <tr>
         <th scope="col">Product </th>
         <th scope="col">Product Description</th>
         <th scope="col">Quantite</th>
+        <th scope="col">Price</th>
         <th scope="col">Action</th>
-      
-    </tr>
-    </thead>
-    <tbody >
-    <tr  *ngFor="let c of Commande">
-        
-      <td><img src="assets/images/{{c.produit.image}}" [ngStyle]="{'weigth' :'50px','height' :'50px'}">{{c.produit.name}}</td>
-  
-      <td>{{c.produit.description}}</td>
 
-      <td>{{c.quantite}}</td>
-      
-  <td><i class="fas fa-trash" [ngStyle]="{'color' :'red'}">
-  </i>  </td>
-    </tr>
-  
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of Commande">
+
+        <td><img src="assets/images/{{c.produit.image}}"
+            [ngStyle]="{'weigth' :'50px','height' :'50px'}">{{c.produit.name}}</td>
+
+        <td>{{c.produit.description}}</td>
+
+        <td><input type="text" value="{{c.quantite}}" class="form-control"></td>
+        <td>{{c.prix}} dt</td>
+        <td><i class="fas fa-trash" [ngStyle]="{'color' :'red'}">
+          </i> <i class="fa fa-edit" [ngStyle]="{'color' :'blue'}">
+          </i> </td>
+      </tr>
+
     </tbody>
+    
   </table>
+  <hr>
+  <span class="badge badge-pill badge-success">Total : {{total}} dt</span>
 </div>

@@ -1,0 +1,25 @@
+
+<div>
+<table class="table">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">Product </th>
+        <th scope="col">Product Description</th>
+        <th scope="col">Quantite</th>
+      
+    </tr>
+    </thead>
+    <tbody >
+    <tr  *ngFor="let c of Commande">
+        
+      <td><img src="assets/images/{{c.produit.image}}" [ngStyle]="{'weigth' :'50px','height' :'50px'}">{{c.produit.name}}</td>
+  
+      <td>{{c.produit.description}}</td>
+
+      <td>{{c.quantite}}</td>
+  
+    </tr>
+  
+    </tbody>
+  </table>
+</div>

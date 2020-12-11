@@ -1,0 +1,46 @@
+<div class="container">
+  <h2 class="section-title text-center">Food Menu</h2>
+
+<div class="row" >
+  <div class="col-md-5 mb-4" *ngFor="let product of ListProduct2">
+
+    <!--Content-->
+    <div class="p-4">
+
+      <div class="mb-3">
+        <a href="">
+          <span class="badge purple mr-1">
+            
+          </span>
+        </a>
+        <a href="">
+          <span class="badge blue mr-1">New</span>
+        </a>
+        <a href="">
+          <span class="badge red mr-1">Bestseller</span>
+        </a>
+      </div>
+
+      <p class="lead">
+        
+        <span>{{product.prix}} dt</span>
+      </p>
+<img src="assets/images/{{product.image}}" [ngStyle]="{'weigth' :'150px','height' :'150px'}">
+      <p class="lead font-weight-bold">Description</p>
+
+      <p>{{product.description}}</p>
+
+      <form class="d-flex justify-content-left" [formGroup]="myform" (ngSubmit)="command(product)">
+        <!-- Default input -->
+        <input type="number"  aria-label="Search" class="form-control" style="width: 100px" formControlName="quantite" >
+        <button class="btn btn-primary btn-md my-0 p" type="submit" [disabled]='ProduitExistePanier(product)' >Add to Panier
+          <i class="fas fa-shopping-cart ml-1"></i>
+        </button>
+
+      </form>
+
+    </div>
+    <!--Content-->
+
+  </div>
+  

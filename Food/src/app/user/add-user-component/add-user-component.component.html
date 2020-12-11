@@ -1,0 +1,59 @@
+<div class="container">
+
+    <form [formGroup]="myform" (ngSubmit)="addUser()">
+        <div class="form-group">
+            <label for="firstname">first name</label>
+            <input class="form-control" type="text" name="firstname" id="n" formControlName="firstname">
+            <div *ngIf="firstname.touched && firstname.invalid">
+                <small *ngIf="firstname.errors.pattern" class="text-danger">invalid firstname</small>
+
+                <small *ngIf="firstname.errors.required" class="text-danger">firstname is required </small><br>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastname">Last name</label>
+            <input class="form-control" type="text" name="lastname" id="n" formControlName="lastname">
+            <div *ngIf="lastname.touched && lastname.invalid">
+                <small *ngIf="lastname.errors.pattern" class="text-danger">invalid lastname</small>
+
+                <small *ngIf="lastname.errors.required" class="text-danger">lastname is required </small><br>
+
+            </div>
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input class="form-control" type="text" name="phone" id="n" formControlName="phone">
+        <div *ngIf="phone.touched && phone.invalid">
+            <small *ngIf="phone.errors.pattern" class="text-danger">invalid phone number</small>
+
+            <small *ngIf="phone.errors.required" class="text-danger">phone number is required </small><br>
+
+        </div>
+    </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input class="form-control" type="text" name="email" id="n" formControlName="email">
+            <div *ngIf="email.touched && email.invalid">
+                <small *ngIf="email.errors.pattern" class="text-danger">invalid email</small>
+
+                <small *ngIf="email.errors.required" class="text-danger">email is required </small><br>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input class="form-control" type="password" name="password" id="n" formControlName="password">
+            <div *ngIf="password.touched && password.invalid">
+                <small *ngIf="password.errors.minLength" class="text-danger">invalid password</small>
+                <small *ngIf="password.errors.required" class="text-danger">password is required </small><br>
+
+            </div>
+        </div>
+        <input [disabled]="myform.invalid" type="submit" class="btn btn-primary" value="send">
+
+    </form>
+
+</div>

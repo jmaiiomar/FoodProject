@@ -1,0 +1,31 @@
+<app-menu></app-menu>
+<div class="container">
+    <h2 class="section-title text-center">Food Menu</h2>
+  
+  <div class="row" >
+    <div class="col-md-5 mb-4" *ngFor="let categorie of ListCategories">
+  
+      <!--Content-->
+      <div class="p-4">
+  
+        <div class="mb-3">
+          <a href="">
+            <span class="badge purple mr-1">
+              
+            </span>
+          </a>
+          
+        </div>
+  
+        <p class="lead">
+          
+          <span>{{categorie.name}} dt</span>
+        </p>
+  <img src="assets/images/{{categorie.image}}" [ngStyle]="{'weigth' :'150px','height' :'150px'}" [routerLink]="['/Product', categorie.id]">
+
+      </div>
+      <!--Content-->
+  
+    </div>
+    
+  

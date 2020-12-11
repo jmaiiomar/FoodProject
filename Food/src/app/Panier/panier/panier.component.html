@@ -20,16 +20,17 @@
 
         <td>{{c.produit.description}}</td>
 
-        <td><input type="text" value="{{c.quantite}}" class="form-control"></td>
+        <td>
+          {{c.quantite}}
+          <input type="text"[(ngModel)]="quantite" [disabled]="edit"   class="form-control"></td>
         <td>{{c.prix}} dt</td>
         <td><i class="fas fa-trash" [ngStyle]="{'color' :'red'}">
-          </i> <i class="fa fa-edit" [ngStyle]="{'color' :'blue'}">
+          </i> <i (click)="EnbleEdit()" class="fa fa-edit" [ngStyle]="{'color' :'blue'}">
           </i> </td>
       </tr>
 
     </tbody>
     
   </table>
-  <hr>
-  <span class="badge badge-pill badge-success">Total : {{total}} dt</span>
+<app-amount [quantite]="quantite"></app-amount>
 </div>

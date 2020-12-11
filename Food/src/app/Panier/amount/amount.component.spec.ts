@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditPanierComponent } from './edit-panier.component';
+import { AmountComponent } from './amount.component';
 
-describe('EditPanierComponent', () => {
-  let component: EditPanierComponent;
-  let fixture: ComponentFixture<EditPanierComponent>;
+describe('AmountComponent', () => {
+  let component: AmountComponent;
+  let fixture: ComponentFixture<AmountComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditPanierComponent ]
+      declarations: [ AmountComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditPanierComponent);
+    fixture = TestBed.createComponent(AmountComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

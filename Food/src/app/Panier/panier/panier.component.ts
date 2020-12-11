@@ -8,17 +8,19 @@ import { CommandeProduit } from 'src/app/modele/CommandeProduit';
 })
 export class PanierComponent implements OnInit {
   Commande: CommandeProduit[] = [];
-
+  quantite;
+  edit=true;
   constructor() { }
-total=0;
+
   ngOnInit(): void {
     JSON.parse(localStorage['Panier']).forEach(element => {
 
       this.Commande.push(element);
     });
-this.Commande.forEach(c=>{
-  this.total=this.total+c.prix;
-})  
   }
+  EnbleEdit ()
+    {
+      this.edit=false;
+    }
 
 }

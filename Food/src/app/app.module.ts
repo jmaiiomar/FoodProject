@@ -14,7 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { PanierComponent } from './Panier/panier/panier.component';
-import { EditPanierComponent } from './Panier/edit-panier/edit-panier.component';
+import { AmountComponent } from './Panier/amount/amount.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { EditPanierComponent } from './Panier/edit-panier/edit-panier.component'
     HomeComponent,
     FooterComponent,
     PanierComponent,
-    EditPanierComponent,
+    AmountComponent,
   ],
   imports: [
     BrowserModule,

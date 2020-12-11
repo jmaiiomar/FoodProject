@@ -1,11 +1,14 @@
 
-<div>
+<div class="container">
+  <i class="fas fa-cart-arrow-down" [ngStyle]="{'color' :'white'}">
+  </i> 
 <table class="table">
-    <thead class="thead-light">
+    <thead class="table-warning">
     <tr>
         <th scope="col">Product </th>
         <th scope="col">Product Description</th>
         <th scope="col">Quantite</th>
+        <th scope="col">Action</th>
       
     </tr>
     </thead>
@@ -17,7 +20,9 @@
       <td>{{c.produit.description}}</td>
 
       <td>{{c.quantite}}</td>
-  
+      
+  <td><i class="fas fa-trash" [ngStyle]="{'color' :'red'}">
+  </i>  </td>
     </tr>
   
     </tbody>

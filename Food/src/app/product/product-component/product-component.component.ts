@@ -38,10 +38,16 @@ export class ProductComponentComponent implements OnInit {
   id: any;
   x: boolean;
   ngOnInit(): void {
-    JSON.parse(localStorage['Panier']).forEach(element => {
+    if(localStorage.getItem('Panier')!=null)
+    {JSON.parse(localStorage['Panier']).forEach(element => {
 
       this.ListProductpanier.push(element['produit']);
-    });
+    });}
+    else
+    {
+      this.ListProductpanier=[];
+    }
+   
     this.x=false;
     /**//////////////////////// */
     this.route.paramMap.subscribe(params => {
@@ -83,9 +89,24 @@ export class ProductComponentComponent implements OnInit {
     panier.produit = product;
     panier.quantite = data;
     //console.log(panier)
-    this.Commande.push(panier)
-    localStorage.setItem('Panier', JSON.stringify(this.Commande));
+    if(localStorage.getItem('Panier')!=null)
+    {JSON.parse(localStorage['Panier']).forEach(element => {
+      if (this.Commande.find((test) => test.produit.id === element['produit'].id) == undefined) {
+        this.Commande.push(element);
+            }
+      
+
+    });
+    console.log(this.Commande)
+  }
+  console.log(this.Commande.find((test) => test.produit.id === panier.id));
+  if (this.Commande.find((test) => test.produit.id === panier.id) === undefined) {
+    this.Commande.push(panier);
+  }
+ 
   
+    localStorage.setItem('Panier', JSON.stringify(this.Commande));
+    alert('added ')
     JSON.parse(localStorage['Panier']).forEach(element => {
 
       this.ListProductpanier.push(element['produit']);

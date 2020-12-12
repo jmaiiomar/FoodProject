@@ -16,7 +16,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { PanierComponent } from './Panier/panier/panier.component';
 import { AmountComponent } from './Panier/amount/amount.component';
 import { CommandeComponent } from './commande/commande.component';
-
+import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +37,7 @@ import { CommandeComponent } from './commande/commande.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ToastNoAnimationModule.forRoot(),
     ReactiveFormsModule,
     JwtModule.forRoot({
       config: {

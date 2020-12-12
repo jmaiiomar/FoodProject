@@ -26,6 +26,7 @@ export class LoginComponentComponent implements OnInit {
   }
 
   ngOnInit(): void {
+   this.Us.logout();
   }
   
   login() {
@@ -43,7 +44,9 @@ export class LoginComponentComponent implements OnInit {
     this.Us.findbyid(data.email,data.password).subscribe(res => {
       console.log('resultats: '+res)
       if(localStorage.getItem('currentUser')==='[]')
-      alert('test');
+      {localStorage.removeItem('currentUser');
+      alert("you have to verify your passwor or Email")
+    }
       else
       this.router.navigateByUrl('/');
 });

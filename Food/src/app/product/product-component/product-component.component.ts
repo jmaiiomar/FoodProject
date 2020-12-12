@@ -2,6 +2,7 @@ import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { element } from 'protractor';
 import { Categorie } from 'src/app/modele/Categorie';
 import { CommandeProduit } from 'src/app/modele/CommandeProduit';
@@ -27,7 +28,7 @@ export class ProductComponentComponent implements OnInit {
   c: any[];
   myform: FormGroup;
 
-  constructor(private fb: FormBuilder, private Cs: CategorieService, private Ps: ProductService, private router: Router, private route: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private Cs: CategorieService, private Ps: ProductService, private router: Router, private route: ActivatedRoute, private toastr: ToastrService) {
     let formControls = {
       quantite: new FormControl('', [
         Validators.required,
@@ -38,6 +39,10 @@ export class ProductComponentComponent implements OnInit {
   }
   id: any;
   x: boolean;
+  get quantite() {
+    return this.myform.get('quantite');
+
+  }
   ngOnInit(): void {
     
 
@@ -109,7 +114,7 @@ export class ProductComponentComponent implements OnInit {
  
   
     localStorage.setItem('Panier', JSON.stringify(this.Commande));
-    alert('added ')
+    this.toastr.success('Added Succes!', 'Panier ');
     JSON.parse(localStorage['Panier']).forEach(element => {
 
       this.ListProductpanier.push(element['produit']);

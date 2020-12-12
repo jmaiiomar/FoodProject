@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { CommandeProduit } from 'src/app/modele/CommandeProduit';
 import { User } from 'src/app/modele/Users';
 import { CommandeService } from 'src/app/service/commande.service';
@@ -13,7 +14,7 @@ export class PanierComponent implements OnInit {
   quantite;
   edit=true;
   CommandeEdit=null;
-  constructor(private Cs: CommandeService) { }
+  constructor(private Cs: CommandeService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     JSON.parse(localStorage['Panier']).forEach(element => {
@@ -37,6 +38,8 @@ export class PanierComponent implements OnInit {
        
   this.Commande.splice( this.Commande.indexOf(cmdc),1);
   localStorage.setItem('Panier', JSON.stringify(this.Commande));
+  this.toastr.error('Deleted with Success!', 'Product ')
+
      }
      addCommande()
      {
@@ -45,7 +48,8 @@ export class PanierComponent implements OnInit {
         user=JSON.parse(localStorage.getItem('currentUser'));
         element.user=user[0];
         this.Cs.addCommande(element).subscribe(c=>
-          alert("Commande Added")
+          this.toastr.success('Added with Success!', 'Product ')
+
           );
        
       });

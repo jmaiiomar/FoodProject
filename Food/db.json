@@ -15,6 +15,28 @@
       "email": "",
       "passwrd": "",
       "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "firstname": "jmai",
+      "lastname": "omar",
+      "phone": "24551966",
+      "email": "k@gmail.com",
+      "passwrd": "123456789",
+      "id": 5
+    },
+    {
+      "firstname": "xxx",
+      "lastname": "xxx",
+      "phone": "24551966",
+      "email": "k@gmail.com",
+      "passwrd": "123456789",
+      "id": 6
     }
   ],
   "product": [
@@ -67,37 +89,7 @@
       "prix": 20
     }
   ],
-  "command": [
-    {
-      "produit": {
-        "id": 1,
-        "categorieProduct": {
-          "categorie": [
-            {
-              "id": 1,
-              "image": "pizza.jpg",
-              "name": "Tuniasia Food"
-            }
-          ]
-        },
-        "name": "humbergur",
-        "description": "pizza.jpg",
-        "image": "humberger.jpg",
-        "prix": 20
-      },
-      "prix": 20,
-      "quantite": 1,
-      "user": {
-        "id": 1,
-        "firstname": "json-server",
-        "lasttname": "json-server",
-        "email": "omar.jmai@esprit.tn",
-        "password": "123",
-        "phone": 24551966
-      },
-      "id": 2
-    }
-  ],
+  "command": [],
   "categorie": [
     {
       "id": 1,

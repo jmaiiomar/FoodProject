@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { CommandeProduit } from 'src/app/modele/CommandeProduit';
 
 @Component({
@@ -12,7 +13,7 @@ export class AmountComponent implements OnInit {
   @Output() Update = new EventEmitter();
 
   Commande: CommandeProduit[] = [];
-  constructor() { }
+  constructor(private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
@@ -42,7 +43,8 @@ export class AmountComponent implements OnInit {
     })
    
     localStorage.setItem('Panier', JSON.stringify(this.Commande));
-    alert('update ')
+    this.toastr.warning('Success!', 'Register ');
+
   }
   sendEvent(): void {
     this.Update.emit(this.Commande);

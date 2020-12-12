@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { CommandeProduit } from '../modele/CommandeProduit';
 import { User } from '../modele/Users';
 import { CommandeService } from '../service/commande.service';
@@ -11,7 +12,7 @@ import { CommandeService } from '../service/commande.service';
 export class CommandeComponent implements OnInit {
   Commande: CommandeProduit[] = [];
 
-  constructor(private Cs: CommandeService) { }
+  constructor(private Cs: CommandeService,private toastr: ToastrService) { }
   user=JSON.parse(localStorage.getItem('currentUser'));
 
   ngOnInit(): void {
@@ -36,7 +37,7 @@ export class CommandeComponent implements OnInit {
   delete(id:number)
   {
     this.Cs.deleteCommande(id).subscribe(d=>{
-      alert('Commande Deleted');
+     
       this.Commande=[];
       this.Cs.findbyUser().subscribe(
         (data: CommandeProduit[]) => {
@@ -51,7 +52,10 @@ export class CommandeComponent implements OnInit {
           );
         }
       );
-       } )
+      this.toastr.error('Deleted with Success!', 'Command ')
+    }
+       
+       )
       
   }
 

@@ -18,9 +18,12 @@
 <i [routerLink]="['/panier']" class="fas fa-cart-arrow-down" [ngStyle]="{'color' :'white'}">
 {{productnumber}}
 </i>
+<i [routerLink]="['/login']"  class="glyphicon glyphicon-log-out" [ngStyle]="{'color' :'white','margin-left' :'20px'}">
+  
+  </i>
     </div>
 </nav>
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" [ngStyle]="{'margin-top' :'-20px'}">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img class="d-block w-100" src="assets/images/a.jpg" alt="First slide" [ngStyle]="{'height' :'500px'}">

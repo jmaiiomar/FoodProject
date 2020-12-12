@@ -35,7 +35,7 @@ export class UserService {
       map(this.extractData),
       catchError(this.handleError));
   }
-  addUser(user: User): Observable<any> {
+    addUser(user: User): Observable<any> {
     console.log(user);
     return this.http.post(this.UsersUrl, user, this.httpOptions).pipe(
       map(this.extractData),
@@ -66,7 +66,9 @@ export class UserService {
     }))
   }
   logout() {
-    localStorage.removeItem('access_token');
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('Panier');
+   
   }
   findbyid(email: any, pass: any): Observable<any[]>  {
     return this.http.get<any[]>(this.UsersUrl + '/?email=' + email + '&&password=' +pass, this.httpOptions).pipe(tap(user => {

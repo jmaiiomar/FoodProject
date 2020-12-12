@@ -1,4 +1,5 @@
 import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,13 +9,22 @@ import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
 
   productnumber:number;
-  constructor() { }
+  constructor(private Us:UserService) { }
 
   ngOnInit(): void {
     //this.productnumber=localStorage['Panier'];
-    this.productnumber=JSON.parse(localStorage['Panier']).length;
+    if(this.Us.isLoggedIn)
+   { this.productnumber=JSON.parse(localStorage['Panier']).length;}
+   else 
+   {
+    this.productnumber=0;
+   }
   
     
+  }
+  logout()
+  {
+this.Us.logout();
   }
 
 }

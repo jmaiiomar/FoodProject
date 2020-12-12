@@ -1,1 +1,32 @@
-<p>commande works!</p>
+<div class="container">
+    <i class="fas fa-cart-arrow-down" [ngStyle]="{'color' :'white'}">
+    </i>
+    <table class="table">
+      <thead class="table-warning">
+        <tr>
+          <th scope="col">Product </th>
+          <th scope="col">Product Description</th>
+          <th scope="col">Quantite</th>
+          <th scope="col">Price</th>
+          <th scope="col">Action</th>
+  
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of Commande">
+  
+          <td><img src="assets/images/{{c.produit.image}}"
+              [ngStyle]="{'weigth' :'50px','height' :'50px'}">{{c.produit.name}}</td>
+  
+          <td>{{c.produit.description}}</td>
+  
+          <td>
+            {{c.quantite}}
+          <td>{{c.prix}} dt</td>
+          <td><i (click)="delete(c.id)"  class="fas fa-trash" [ngStyle]="{'color' :'red'}">
+            </i>  </td>
+        </tr>
+  
+      </tbody>
+      
+    </table>

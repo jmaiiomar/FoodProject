@@ -38,12 +38,16 @@ export class CommandeService {
       map(this.extractData),
       catchError(this.handleError));
   }
-  findbyUser(user: any): Observable<any> {
-    console.log( user)
-    return this.http.get<any>(this.CommandeUrl + '/user' + JSON.parse('user',user))}
-   
-   
-
+  findbyUser(): Observable<CommandeProduit[]> {
+    return this.http.get<CommandeProduit[]>(this.CommandeUrl, this.httpOptions);
+  }
+  deleteCommande(u: User | number): Observable<any> {
+    const id = typeof u === 'number' ? u : u.id;
+    const url = this.CommandeUrl + '/' + id;
+    return this.http.delete(url).pipe(
+      map(this.extractData),
+      catchError(this.handleError));;
+  }
 
 
 }

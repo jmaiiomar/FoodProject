@@ -83,4 +83,15 @@ login2(user: any) {
     localStorage.setItem('access_token', res.access_token);
   }));
 }
+
+isLoggedIn()
+{let token =localStorage.getItem('currentUser');
+if(token)
+ { return true ;}
+  else 
+  {return false ;}
+}
+
+
+
 }

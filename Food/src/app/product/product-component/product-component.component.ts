@@ -2,6 +2,7 @@ import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { element } from 'protractor';
 import { Categorie } from 'src/app/modele/Categorie';
 import { CommandeProduit } from 'src/app/modele/CommandeProduit';
 import { Product } from 'src/app/modele/Product';
@@ -19,7 +20,7 @@ export class ProductComponentComponent implements OnInit {
   ListProduct: Product[];
   ListProduct2: Product[] = [];
   ListProductpanier: Product[] = [];
-
+  search;
   Commande: CommandeProduit[] = [];
 
 
@@ -38,6 +39,8 @@ export class ProductComponentComponent implements OnInit {
   id: any;
   x: boolean;
   ngOnInit(): void {
+    
+
     if(localStorage.getItem('Panier')!=null)
     {JSON.parse(localStorage['Panier']).forEach(element => {
 
@@ -100,8 +103,7 @@ export class ProductComponentComponent implements OnInit {
     });
     console.log(this.Commande)
   }
-  console.log(this.Commande.find((test) => test.produit.id === panier.id));
-  if (this.Commande.find((test) => test.produit.id === panier.id) === undefined) {
+  if (this.Commande.find((test) => test.produit.id === panier.produit.id) === undefined) {
     this.Commande.push(panier);
   }
  
@@ -128,5 +130,27 @@ export class ProductComponentComponent implements OnInit {
      else 
      return true ;
   }
+  recherche()
+  {if (this.search !== '') {
+
+     this.ListProduct2.forEach(element=>{
+      if(element.name===this.search || element.description===this.search  || element.prix===this.search)
+      this.ListProduct2=[];
+      this.ListProduct2.push(element);
+    }
+    )}
+    else
+  { this.ListProduct2=[];
+    this.ListProduct.forEach(element => {
+    if (element.categorieProduct['categorie'][0]['id'] === this.c[0]['id']) {
+      let prd = new Product();
+      prd = element;
+      this.ListProduct2.push(prd);
+    }
+
+  });
+}
+  }
 
 }
+

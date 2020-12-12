@@ -1,6 +1,7 @@
 <div class="container">
   <h2 class="section-title text-center">Food Menu</h2>
-
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"  [(ngModel)]="search">
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit" (click)="recherche()">Search</button>
 <div class="row" >
   <div class="col-md-5 mb-4" *ngFor="let product of ListProduct2">
 
@@ -32,7 +33,7 @@
 
       <form class="d-flex justify-content-left" [formGroup]="myform" (ngSubmit)="command(product)">
         <!-- Default input -->
-        <input type="number" required aria-label="Search" class="form-control" style="width: 100px" formControlName="quantite" >
+        <input type="number"  aria-label="Search" class="form-control" style="width: 100px" formControlName="quantite" >
         <button class="btn btn-primary btn-md my-0 p" type="submit" [disabled]='ProduitExistePanier(product)' >Add to Panier
           <i class="fas fa-shopping-cart ml-1"></i>
         </button>

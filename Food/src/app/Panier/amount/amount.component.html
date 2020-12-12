@@ -18,8 +18,9 @@
                 <h5 class="card-title">{{quantite.produit.name}}</h5>
                 <p class="card-text">{{quantite.produit.description}}</p>
                 <form #editform="ngForm" (ngSubmit)="EditComande(editform.value,quantite)">
-                <input type="number" value="{{quantite.quantite}}" class="form-control" name="quantite" ngModel>
-                <input type="submit" class="btn btn-info" (click)="sendEvent()">
+                <input type="number" value="{{quantite.quantite}}"  class="form-control" name="quantite" required
+                [(ngModel)]="quantite.quantite" #q="ngModel">
+                <input type="submit" class="btn btn-info" (click)="sendEvent()"[disabled]="editform.invalid">
             </form>
             </div>
         </div>

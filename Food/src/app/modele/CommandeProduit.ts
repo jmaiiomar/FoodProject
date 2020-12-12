@@ -3,7 +3,7 @@ import { User } from './Users';
 
 export class CommandeProduit{
     
-    id:string;
+    id:number;
     produit:Product;
     quantite:number;
     user:User;

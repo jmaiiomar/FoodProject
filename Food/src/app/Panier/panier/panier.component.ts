@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommandeProduit } from 'src/app/modele/CommandeProduit';
+import { User } from 'src/app/modele/Users';
+import { CommandeService } from 'src/app/service/commande.service';
 
 @Component({
   selector: 'app-panier',
@@ -11,7 +13,7 @@ export class PanierComponent implements OnInit {
   quantite;
   edit=true;
   CommandeEdit=null;
-  constructor() { }
+  constructor(private Cs: CommandeService) { }
 
   ngOnInit(): void {
     JSON.parse(localStorage['Panier']).forEach(element => {
@@ -27,5 +29,26 @@ export class PanierComponent implements OnInit {
       console.log("this is it: "+this.CommandeEdit)
 
     }
+    updateComande(cmd : CommandeProduit[]): void {
+      this.Commande=cmd;
+     }
+     delete(cmdc:CommandeProduit)
+     {
+       
+  this.Commande.splice( this.Commande.indexOf(cmdc),1);
+  localStorage.setItem('Panier', JSON.stringify(this.Commande));
+     }
+     addCommande()
+     {
+       let user=new User();
+      this.Commande.forEach(element => {
+        user=JSON.parse(localStorage.getItem('currentUser'));
+        element.user=user[0];
+        this.Cs.addCommande(element).subscribe(c=>
+          alert("Commande Added")
+          );
+       
+      });
+     }
 
 }

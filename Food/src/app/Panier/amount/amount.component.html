@@ -17,7 +17,10 @@
             <div class="col-md4"[ngStyle]="{'margin-left' :'30px'}" >
                 <h5 class="card-title">{{quantite.produit.name}}</h5>
                 <p class="card-text">{{quantite.produit.description}}</p>
-                <input type="number" value="{{quantite.quantite}}" class="form-control">
+                <form #editform="ngForm" (ngSubmit)="EditComande(editform.value,quantite)">
+                <input type="number" value="{{quantite.quantite}}" class="form-control" name="quantite" ngModel>
+                <input type="submit" class="btn btn-info" (click)="sendEvent()">
+            </form>
             </div>
         </div>
     </div>

@@ -16,8 +16,6 @@
       "passwrd": "",
       "id": 2
     }
-    
-   
   ],
   "product": [
     {
@@ -25,11 +23,12 @@
       "categorieProduct": {
         "categorie": [
           {
-         "id": 1,
-         "image": "pizza.jpg",
-         "name": "Tuniasia Food"  
-           }
-       ] } ,
+            "id": 1,
+            "image": "pizza.jpg",
+            "name": "Tuniasia Food"
+          }
+        ]
+      },
       "name": "humbergur",
       "description": "pizza.jpg",
       "image": "humberger.jpg",
@@ -40,11 +39,12 @@
       "categorieProduct": {
         "categorie": [
           {
-         "id": 2,
-         "image": "pizza.jpg",
-         "name": "a Food"  
-           }
-       ] } ,
+            "id": 2,
+            "image": "pizza.jpg",
+            "name": "a Food"
+          }
+        ]
+      },
       "name": "humbergur",
       "description": "humberger",
       "image": "humberger.jpg",
@@ -55,11 +55,12 @@
       "categorieProduct": {
         "categorie": [
           {
-         "id": 1,
-         "image": "pizza.jpg",
-         "name": "Tuniasia Food"  
-           }
-       ] } ,
+            "id": 1,
+            "image": "pizza.jpg",
+            "name": "Tuniasia Food"
+          }
+        ]
+      },
       "name": "humbergur",
       "description": "humberger",
       "image": "pizza.jpg",
@@ -67,26 +68,76 @@
     }
   ],
   "command": [
-     {
-    "id": "typicode",
-    "iduser": 1,
-    "number": 5,
-    "address": "rue 25",
-    "idproduct": 1,
-    "nombreProduit": 2,
-    "montant": 40
-  }
+    
+    {
+      "produit": {
+        "id": 1,
+        "categorieProduct": {
+          "categorie": [
+            {
+              "id": 1,
+              "image": "pizza.jpg",
+              "name": "Tuniasia Food"
+            }
+          ]
+        },
+        "name": "humbergur",
+        "description": "pizza.jpg",
+        "image": "humberger.jpg",
+        "prix": 20
+      },
+      "prix": 20,
+      "quantite": 1,
+      "user": {
+        "id": 2,
+        "firstname": "aaa",
+        "lasttname": "a-a",
+        "email": "omar.aaaa@esprit.tn",
+        "password": "aaa",
+        "phone": 245966
+      },
+      "id": 4
+    },
+    {
+      "produit": {
+        "id": 3,
+        "categorieProduct": {
+          "categorie": [
+            {
+              "id": 1,
+              "image": "pizza.jpg",
+              "name": "Tuniasia Food"
+            }
+          ]
+        },
+        "name": "humbergur",
+        "description": "humberger",
+        "image": "pizza.jpg",
+        "prix": 20
+      },
+      "prix": 40,
+      "quantite": 2,
+      "user": {
+        "id": 1,
+        "firstname": "json-server",
+        "lasttname": "json-server",
+        "email": "omar.jmai@esprit.tn",
+        "password": "123",
+        "phone": 24551966
+      },
+      "id": 5
+    }
   ],
   "categorie": [
     {
-   "id": 1,
-   "image": "pizza.jpg",
-   "name": "Tunisia Food"  
-     },
-     {
+      "id": 1,
+      "image": "pizza.jpg",
+      "name": "Tunisia Food"
+    },
+    {
       "id": 2,
       "image": "pizza.jpg",
-      "name": "french Food"  
-        }
- ]
+      "name": "french Food"
+    }
+  ]
 }

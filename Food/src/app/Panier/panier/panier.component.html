@@ -24,7 +24,7 @@
           {{c.quantite}}
           <input type="text"   class="form-control"></td>
         <td>{{c.prix}} dt</td>
-        <td><i class="fas fa-trash" [ngStyle]="{'color' :'red'}">
+        <td><i (click)="delete(c)"  class="fas fa-trash" [ngStyle]="{'color' :'red'}">
           </i> <i (click)="EnbleEdit(c)" class="fa fa-edit" [ngStyle]="{'color' :'blue'}">
           </i> </td>
       </tr>
@@ -32,6 +32,6 @@
     </tbody>
     
   </table>
-<app-amount [quantite]="CommandeEdit"></app-amount>
-
+<app-amount [quantite]="CommandeEdit" (Update)="updateComande($event)"></app-amount>
+<button class="btn btn-info" (click)="addCommande()">Addd Command </button>
 </div>

@@ -2,16 +2,20 @@
     <ul class="navbar-nav mr-auto">
         
         <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/Product']" >Home
+          <a class="nav-link" [routerLink]="['/']" >Home
           </a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link"  [routerLink]="['/Commande']">Your Command
             </a>
         </li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/panier']">Your Panier
+          </a>
+      </li>
     </ul>
     <div >
-<i class="fas fa-cart-arrow-down" [ngStyle]="{'color' :'white'}">
+<i [routerLink]="['/panier']" class="fas fa-cart-arrow-down" [ngStyle]="{'color' :'white'}">
 {{productnumber}}
 </i>
     </div>

@@ -4,7 +4,7 @@
 
 
 # About Ymmy
-An online food ordering system for your restaurant. Open up to new opportunities and win clients online 
+[top](#smileys--emotion)An online food ordering system for your restaurant. Open up to new opportunities and win clients online 
 <hr/>
 
 

@@ -4,7 +4,7 @@
 
 
 # About Ymmy
-[top](#smileys--emotion)An online food ordering system for your restaurant. Open up to new opportunities and win clients online 
+An online food ordering :writing_hand: system for your restaurant. Open up to new opportunities and win clients online 
 <hr/>
 
 

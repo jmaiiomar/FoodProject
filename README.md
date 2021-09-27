@@ -1,4 +1,4 @@
-# Ymmy
+# Ymmy <p align = "center"> :kissing_closed_eyes: </p>
 ![alt text](https://raw.githubusercontent.com/jmaiiomar/FoodProject/master/Food/src/assets/images/humberger.jpg)
 
 

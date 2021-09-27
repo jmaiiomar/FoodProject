@@ -1,4 +1,4 @@
-#  <p align = "center"> :kissing_closed_eyes: </p>Ymmy
+#  <p > :kissing_closed_eyes: </p>Ymmy
 ![alt text](https://raw.githubusercontent.com/jmaiiomar/FoodProject/master/Food/src/assets/images/humberger.jpg)
 
 

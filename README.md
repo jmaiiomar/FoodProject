@@ -4,19 +4,20 @@
 
 
 # About Ymmy :thinking:
+
 An online food ordering :writing_hand: system for your restaurant. Open up to new opportunities and win clients online 
-<hr/>
 
 
 
 # Developed by  :computer:
+
 <br/>
 <code><img height="70" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/angular/angular.png"></code>
 <br/>
 
 
 
-# Installation & Usage :chart:
+# Installation & Usage :trophy:
 <br/>
 
 <ul>
@@ -33,8 +34,10 @@ An online food ordering :writing_hand: system for your restaurant. Open up to ne
 
 <br/>
 
-#Credit :memo::pencil:
+#Credit :memo:
 <h3>Omar JMAI </h3>
+#Support :memo:
+I hope my project help you :thumbsup: if it does, then support :astronaut: me with starts :star2:.
 
 
 

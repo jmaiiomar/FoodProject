@@ -1,12 +1,21 @@
 # Ymmy
 ![alt text](https://raw.githubusercontent.com/jmaiiomar/FoodProject/master/Food/src/assets/images/humberger.jpg)
 
+
+
 # About Ymmy
 An online food ordering system for your restaurant. Open up to new opportunities and win clients online 
 <hr/>
+
+
+
 # Developed by 
 <br/>
-<code><img height="50" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/angular/angular.png"></code>
+<code><img height="70" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/angular/angular.png"></code>
+<br/>
+
+
+
 # Installation & Usage
 <br/>
 
@@ -19,10 +28,13 @@ An online food ordering system for your restaurant. Open up to new opportunities
   <li>Run "ng serve" in the main directory</li>
   <li>Visit "http://localhost:4200" </li>
 </ul>
+
+
+
 <br/>
 
 #Credit
-<h1>Omar JMAI </h1>
+<h3>Omar JMAI </h3>
 
 
 
